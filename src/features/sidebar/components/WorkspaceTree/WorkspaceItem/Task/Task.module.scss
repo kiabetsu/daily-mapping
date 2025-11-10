@@ -1,0 +1,37 @@
+.task {
+  position: relative;
+
+  .branch1 {
+    position: absolute;
+    left: -29px;
+    top: -3px;
+  }
+
+  .branch2 {
+    position: absolute;
+    left: -29px;
+    top: -12px;
+  }
+
+  .branch3 {
+    position: absolute;
+    left: -29px;
+    top: -33px;
+  }
+
+  .taskButton {
+    margin-left: 2px;
+    color: #00000060;
+    padding: 6px 8px;
+    max-width: 100%;
+  }
+
+  .active {
+    background-color: #faff5a64 !important;
+    color: #000 !important;
+
+    &:hover {
+      background-color: #faff5a40 !important;
+    }
+  }
+}

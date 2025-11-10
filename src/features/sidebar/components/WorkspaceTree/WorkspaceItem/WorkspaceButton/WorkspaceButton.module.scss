@@ -1,0 +1,26 @@
+.active {
+  background-color: #faff5a64 !important;
+  color: #000 !important;
+
+  &:hover {
+    background-color: #faff5a40 !important;
+  }
+}
+
+.expanded {
+  .startIcon {
+    transform: rotate(90deg);
+    color: #000;
+  }
+}
+
+.workspaceItem {
+  width: 100%;
+  z-index: 100;
+
+  transition: all 0.2s ease;
+
+  .startIcon {
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}

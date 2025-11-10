@@ -1,4 +1,4 @@
-import { type ButtonHTMLAttributes } from 'react';
+import { MouseEventHandler, type ButtonHTMLAttributes } from 'react';
 
 import styles from './Button.module.scss';
 
@@ -8,6 +8,7 @@ type ButtonType = ButtonHTMLAttributes<HTMLButtonElement> & {
   variant?: 'primary' | 'secondary' | 'text';
   size?: 'sm' | 'md' | 'lg';
   isLoading?: boolean;
+  onClickStartIcon?: MouseEventHandler;
 };
 
 export const Button = ({
@@ -18,6 +19,7 @@ export const Button = ({
   isLoading = false,
   className = '',
   children,
+  onClickStartIcon,
   ...props
 }: ButtonType) => {
   return (
@@ -25,7 +27,11 @@ export const Button = ({
       className={`${styles.button} ${styles[variant]} ${styles[size]} ${className}`}
       disabled={isLoading || props.disabled}
       {...props}>
-      {startIcon && <span className={styles.startIcon}>{startIcon}</span>}
+      {startIcon && (
+        <span className={styles.startIcon} onClick={onClickStartIcon}>
+          {startIcon}
+        </span>
+      )}
       <span className={styles.label}>{isLoading ? 'Loading...' : children}</span>
       {endIcon && <span className={styles.endIcon}>{endIcon}</span>}
     </button>

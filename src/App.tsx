@@ -10,7 +10,13 @@ const router = createBrowserRouter([
   {
     path: '/',
     element: <HomePage />,
-    children: [{ path: 'index', element: <div>first index page</div> }],
+    children: [
+      { path: 'dashboard', element: <div>dashboard page</div> },
+      { path: 'categories', element: <div>categories page</div> },
+      { path: 'settings', element: <div>settings page</div> },
+      { path: 'workspace/:workspaceId', element: <div>workspace</div> },
+      { path: 'task/:taskId', element: <div>task page</div> },
+    ],
   },
 ]);
 

@@ -63,5 +63,25 @@
 
   .label {
     margin-right: auto;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+  }
+
+  .startIcon,
+  .endIcon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+  .active {
+    background-color: #faff5a64 !important;
+    color: #000 !important;
+
+    &:hover {
+      background-color: #faff5a40 !important;
+    }
   }
 }
