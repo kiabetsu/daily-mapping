@@ -7,7 +7,6 @@ import { SidebarNav } from './SidebarNav/SidebarNav';
 import { WorkspaceTree } from './WorkspaceTree/WorkspaceTree';
 import { Footer } from './Footer/Footer';
 import useSidebarStore from '../store/sidebar';
-import { projects, workspaceProjects } from '../../../hooks/sidebar/useSidebar';
 
 export const Sidebar = () =>
   // { user, projects, selectedProject, menuItems }: SidebarType

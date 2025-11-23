@@ -3,14 +3,7 @@ import React, { MouseEvent } from 'react';
 import useSidebarStore from '../store/sidebar';
 
 export const useClick = () => {
-  const {
-    setActivePageId,
-    activePageId,
-    sidebarList,
-    setState,
-    setWorkspaceExpanded,
-    workspaceIsExpand,
-  } = useSidebarStore();
+  const { setActivePageId, activePageId } = useSidebarStore();
 
   type handleClickType = 'menu' | 'workspace' | 'task';
 
@@ -30,21 +23,19 @@ export const useClick = () => {
     }
   };
 
-  const handleExpand = (workspaceId: number, e: MouseEvent) => {
-    setWorkspaceExpanded(workspaceId);
-    // const newWorkspace = sidebarList.workspace.map((ws) => {
-    //   return ws.id === workspaceId ? { ...ws, isExpanded: !ws.isExpanded } : ws;
-    // });
-    // const newData = { ...sidebarList, workspace: newWorkspace };
-    // setState(newData);
+  const [isExpanded, setIsExpanded] = React.useState(false);
+
+  const handleExpand = (e: MouseEvent) => {
+    e.preventDefault();
+    setIsExpanded(!isExpanded);
     e.stopPropagation();
   };
 
-  return { activePageId, handleClick, handleExpand, workspaceIsExpand };
+  return { activePageId, handleClick, handleExpand, isExpanded };
 };
 
-export const useArrowClick = (isActive: boolean) => {
-  const [isExpanded, setIsExpanded] = React.useState(false);
+export const useArrowClick = (isActive: boolean = false) => {
+  const [isExpanded, setIsExpanded] = React.useState(isActive);
 
   const expand = (e: MouseEvent) => {
     setIsExpanded(!isExpanded);

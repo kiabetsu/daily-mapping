@@ -13,10 +13,11 @@ interface IWorkspaceButton {
   isActive?: boolean;
   isActiveTaskId?: string;
   isExpanded?: boolean;
+  onClick: (e: React.MouseEvent) => void;
 }
 
-export const WorkspaceButton = ({ id, label, isExpanded }: IWorkspaceButton) => {
-  const { handleClick, activePageId, handleExpand, workspaceIsExpand } = useClick();
+export const WorkspaceButton = ({ id, label, isExpanded, onClick }: IWorkspaceButton) => {
+  const { handleClick, activePageId } = useClick();
 
   return (
     <Link to={`workspace/${id}`}>
@@ -28,9 +29,9 @@ export const WorkspaceButton = ({ id, label, isExpanded }: IWorkspaceButton) => 
         startIcon={<Arrow className={styles.startIcon} />}
         onClick={(e) => {
           handleClick(id, 'workspace');
-          // !isExpanded && handleExpand(id, e);
+          !isExpanded && onClick(e);
         }}
-        onClickStartIcon={(e) => handleExpand(id, e)}>
+        onClickStartIcon={(e) => onClick(e)}>
         {label}
       </Button>
     </Link>
