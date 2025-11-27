@@ -8,13 +8,17 @@ import { WorkspaceTree } from './WorkspaceTree/WorkspaceTree';
 import { Footer } from './Footer/Footer';
 import useSidebarStore from '../store/sidebar';
 
-export const Sidebar = () =>
+interface ISidebar {
+  width: number;
+}
+
+export const Sidebar = ({ width }: ISidebar) =>
   // { user, projects, selectedProject, menuItems }: SidebarType
   {
     const { sidebarList } = useSidebarStore();
 
     return (
-      <div className={styles.sidebar}>
+      <div className={styles.sidebar} style={{ width: `${width}px` }}>
         <UserProfile
           avatar={avatar}
           name={sidebarList.user.username}

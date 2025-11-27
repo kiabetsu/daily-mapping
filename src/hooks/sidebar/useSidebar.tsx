@@ -1,7 +1,7 @@
 import { ReactComponent as Dashboard } from '../../assets/Atom.svg';
 import { ReactComponent as Categories } from '../../assets/Vector (2).svg';
 import { ReactComponent as Settings } from '../../assets/GearSix.svg';
-import React from 'react';
+import React, { useCallback } from 'react';
 const endIcon = (
   <div
     style={{
@@ -70,4 +70,49 @@ export const workspaceProjects = [
 
 const onClickWorkspaceItem = (index: number) => {
   // const [options, setOptions] = React.useState(projects)
+};
+
+export const useLayoutEffect = () => {
+  const [sidebarWidth, setSidebarWidth] = React.useState(320);
+  const [isDrag, setIsDrag] = React.useState(false);
+  const [startWidth, setStartWidth] = React.useState(325);
+
+  const handleMouseMove = useCallback((e: MouseEvent) => {
+    console.log('mouse move');
+    setStartWidth(e.pageX);
+    console.log(sidebarWidth, e.pageX, startWidth);
+
+    const minWidth = 100;
+    const maxWidth = 600;
+
+    let newWidth = sidebarWidth + e.pageX - startWidth;
+    newWidth = Math.max(minWidth, Math.min(newWidth, maxWidth));
+
+    setSidebarWidth(newWidth);
+  }, []);
+
+  const startDrag = React.useCallback((e: React.MouseEvent<HTMLDivElement>) => {
+    e.preventDefault();
+    setIsDrag(true);
+  }, []);
+
+  const stopDrag = React.useCallback((e: MouseEvent) => {
+    setIsDrag(false);
+  }, []);
+
+  React.useEffect(() => {
+    if (isDrag) {
+      document.addEventListener('mousemove', handleMouseMove);
+      document.addEventListener('mouseup', stopDrag);
+    } else {
+      document.removeEventListener('mousemove', handleMouseMove);
+      document.removeEventListener('mouseup', stopDrag);
+    }
+    return () => {
+      document.removeEventListener('mousemove', handleMouseMove);
+      document.removeEventListener('mouseup', stopDrag);
+    };
+  }, [isDrag, handleMouseMove, stopDrag]);
+
+  return { sidebarWidth, startDrag, stopDrag };
 };

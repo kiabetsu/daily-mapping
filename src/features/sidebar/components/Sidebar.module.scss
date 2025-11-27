@@ -1,10 +1,11 @@
 @use '../../../styles/variables' as *;
 
 .sidebar {
-  width: 300px;
+  // width: 290px;
   // height: 100%;
+  box-sizing: border-box;
   background-color: #f6f6f3;
-  padding: 48px 20px 98px 40px;
+  padding: 48px 10px 98px 40px;
   overflow: auto;
 
   a {
