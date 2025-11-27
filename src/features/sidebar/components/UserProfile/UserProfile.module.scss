@@ -3,6 +3,7 @@
 .userProfile {
   display: flex;
   align-items: center;
+  justify-content: start;
   height: 62px;
   gap: 18px;
   margin-bottom: 48px;
@@ -21,6 +22,11 @@
     line-height: 1.4em;
     gap: 8px;
 
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+
     .userName {
       font-size: 26px;
       font-weight: 500;
@@ -31,4 +37,10 @@
       font-size: 16px;
     }
   }
+}
+
+.miniSb {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

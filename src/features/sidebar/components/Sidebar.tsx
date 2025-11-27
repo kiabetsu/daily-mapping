@@ -18,16 +18,22 @@ export const Sidebar = ({ width }: ISidebar) =>
     const { sidebarList } = useSidebarStore();
 
     return (
-      <div className={styles.sidebar} style={{ width: `${width}px` }}>
-        <UserProfile
-          avatar={avatar}
-          name={sidebarList.user.username}
-          subInfo={sidebarList.user.substring}
-        />
-        {/*TODO: make quick search*/}
-        <SidebarNav options={sidebarList.menu} />
-        <WorkspaceTree workspaces={sidebarList.workspace} />
-        <Footer />
+      <div
+        className={`${styles.sidebar} ${width < 200 && styles.miniSidebar}`}
+        style={{ width: `${width}px` }}>
+        <div className={styles.upperSide}>
+          <UserProfile
+            avatar={avatar}
+            name={sidebarList.user.username}
+            subInfo={sidebarList.user.substring}
+            miniSb={width < 200}
+          />
+          {/*TODO: make quick search*/}
+
+          <SidebarNav options={sidebarList.menu} miniSb={width < 200} />
+          <WorkspaceTree workspaces={sidebarList.workspace} miniSb={width < 200} />
+        </div>
+        <Footer miniSb={width < 200} />
       </div>
     );
   };

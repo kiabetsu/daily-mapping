@@ -10,9 +10,9 @@ type options = {
   id: string;
 };
 
-type SidebarNavItems = { options: options[] };
+type SidebarNavItems = { options: options[]; miniSb?: boolean };
 
-export const SidebarNav = ({ options }: SidebarNavItems) => {
+export const SidebarNav = ({ options, miniSb }: SidebarNavItems) => {
   return (
     <nav>
       <ul className={styles.ul}>
@@ -24,6 +24,7 @@ export const SidebarNav = ({ options }: SidebarNavItems) => {
               id={item.id}
               startIcon={item.startIcon}
               endIcon={item.endIcon}
+              miniSb={miniSb}
             />
           );
         })}

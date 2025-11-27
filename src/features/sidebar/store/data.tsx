@@ -5,7 +5,7 @@ import { ReactComponent as Settings } from '../../../assets/GearSix.svg';
 const endIcon = (
   <div
     style={{
-      backgroundColor: '#975BEC24',
+      backgroundColor: '#dbc2fdff',
       color: '#975BEC',
       borderRadius: '50%',
       height: '26px',

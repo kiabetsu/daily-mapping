@@ -44,5 +44,3 @@ export const useArrowClick = (isActive: boolean = false) => {
 
   return { isExpanded, setIsExpanded, expand };
 };
-
-export {};

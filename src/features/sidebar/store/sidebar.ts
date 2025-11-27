@@ -3,11 +3,6 @@ import { create } from 'zustand';
 import type { ISidebarStore } from './types';
 import { user, options, workspaceProjects } from './data';
 
-const changeExpanded = (id: number) => {
-  let newData = workspaceProjects;
-  newData[id].isActive = !newData[id].isActive;
-};
-
 const useSidebarStore = create<ISidebarStore>((set) => ({
   sidebarList: { user: user, menu: options, workspace: workspaceProjects },
   activePageId: ['dashboard'],

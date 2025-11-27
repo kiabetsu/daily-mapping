@@ -4,10 +4,14 @@ import styles from './Footer.module.scss';
 import { Button } from '../../../../components/Button/Button';
 import { ReactComponent as SignOut } from '../../../../assets/SignOut.svg';
 
-export const Footer = () => {
+type FooterType = {
+  miniSb: boolean;
+};
+
+export const Footer = ({ miniSb }: FooterType) => {
   return (
     <div className={styles.footer}>
-      <Button variant="text" startIcon={<SignOut />}>
+      <Button variant="text" startIcon={<SignOut />} iconButton={miniSb}>
         Logout
       </Button>
     </div>

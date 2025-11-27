@@ -17,21 +17,26 @@ interface Workspace {
 
 interface WorkspaceTreeProps {
   workspaces: Workspace[];
+  miniSb: boolean;
 }
 
-export const WorkspaceTree = ({ workspaces }: WorkspaceTreeProps) => {
+export const WorkspaceTree = ({ workspaces, miniSb }: WorkspaceTreeProps) => {
   return (
-    <div className={styles.workspaceTree}>
-      <div className={styles.title}>Workspace</div>
-      {workspaces.map((workspace, index) => (
-        <WorkspaceItem
-          key={index}
-          id={workspace.id}
-          label={workspace.title}
-          // isExpanded={workspace.isExpanded}
-          tasks={workspace.tasks}
-        />
-      ))}
-    </div>
+    <>
+      {!miniSb && (
+        <div className={styles.workspaceTree}>
+          <div className={styles.title}>Workspace</div>
+          {workspaces.map((workspace, index) => (
+            <WorkspaceItem
+              key={index}
+              id={workspace.id}
+              label={workspace.title}
+              // isExpanded={workspace.isExpanded}
+              tasks={workspace.tasks}
+            />
+          ))}
+        </div>
+      )}
+    </>
   );
 };
