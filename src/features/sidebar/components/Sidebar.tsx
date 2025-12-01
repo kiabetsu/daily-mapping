@@ -6,6 +6,7 @@ import { UserProfile } from './UserProfile/UserProfile';
 import { SidebarNav } from './SidebarNav/SidebarNav';
 import { WorkspaceTree } from './WorkspaceTree/WorkspaceTree';
 import { Footer } from './Footer/Footer';
+import { Search } from './Search/Search';
 import useSidebarStore from '../store/sidebar';
 
 interface ISidebar {
@@ -29,6 +30,7 @@ export const Sidebar = ({ width }: ISidebar) =>
             miniSb={width < 200}
           />
           {/*TODO: make quick search*/}
+          <Search />
 
           <SidebarNav options={sidebarList.menu} miniSb={width < 200} />
           <WorkspaceTree workspaces={sidebarList.workspace} miniSb={width < 200} />
