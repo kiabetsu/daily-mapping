@@ -29,8 +29,8 @@ export const Sidebar = ({ width }: ISidebar) =>
             subInfo={sidebarList.user.substring}
             miniSb={width < 200}
           />
-          {/*TODO: make quick search*/}
-          <Search />
+
+          <Search miniSb={width < 200} />
 
           <SidebarNav options={sidebarList.menu} miniSb={width < 200} />
           <WorkspaceTree workspaces={sidebarList.workspace} miniSb={width < 200} />
