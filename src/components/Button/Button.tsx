@@ -7,6 +7,7 @@ type ButtonType = ButtonHTMLAttributes<HTMLButtonElement> & {
   endIcon?: React.ReactNode;
   variant?: 'primary' | 'secondary' | 'text';
   size?: 'sm' | 'md' | 'lg';
+  iconButton?: boolean;
   isLoading?: boolean;
   onClickStartIcon?: MouseEventHandler;
 };
@@ -16,6 +17,7 @@ export const Button = ({
   endIcon,
   variant = 'primary',
   size = 'md',
+  iconButton = false,
   isLoading = false,
   className = '',
   children,
@@ -24,7 +26,9 @@ export const Button = ({
 }: ButtonType) => {
   return (
     <button
-      className={`${styles.button} ${styles[variant]} ${styles[size]} ${className}`}
+      className={`${styles.button} ${styles[variant]} ${styles[size]} ${
+        iconButton && styles.iconButton
+      } ${className}`}
       disabled={isLoading || props.disabled}
       {...props}>
       {startIcon && (

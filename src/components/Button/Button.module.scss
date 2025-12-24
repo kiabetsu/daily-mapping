@@ -85,3 +85,22 @@
     }
   }
 }
+
+.iconButton {
+  // background-color: #000;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  .label {
+    // color: red !important;
+    // border: #000 2px solid;
+    display: none;
+  }
+  .endIcon {
+    position: absolute;
+    inset-inline-start: 40px;
+    inset-block-start: -10px;
+  }
+}

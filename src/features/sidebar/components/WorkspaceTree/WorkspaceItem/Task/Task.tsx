@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import { ReactComponent as Checkbox } from '../../../../../../assets/CaretDown.svg';
 import { ReactComponent as Branch1 } from '../../../../../../assets/Vector 2.svg';
@@ -18,26 +19,28 @@ interface ITaskSidebar {
 export const Task = ({ index, taskId, title }: ITaskSidebar) => {
   const { handleClick, activePageId } = useClick();
   return (
-    <div className={styles.task}>
-      {index === 0 ? (
-        <Branch2 className={styles.branch2} />
-      ) : (
-        <Branch3 className={styles.branch3} />
-      )}
-      <Branch1 className={styles.branch1} />
+    <Link to={`task/${taskId}`}>
+      <div className={styles.task}>
+        {index === 0 ? (
+          <Branch2 className={styles.branch2} />
+        ) : (
+          <Branch3 className={styles.branch3} />
+        )}
+        <Branch1 className={styles.branch1} />
 
-      <Button
-        className={`${styles.taskButton}
+        <Button
+          className={`${styles.taskButton}
               ${
                 JSON.stringify(activePageId) === JSON.stringify(['task', taskId])
                   ? styles.active
                   : ''
               }`}
-        variant="text"
-        startIcon={<Checkbox />}
-        onClick={() => handleClick(taskId, 'task')}>
-        {title}
-      </Button>
-    </div>
+          variant="text"
+          startIcon={<Checkbox />}
+          onClick={() => handleClick(taskId, 'task')}>
+          {title}
+        </Button>
+      </div>
+    </Link>
   );
 };

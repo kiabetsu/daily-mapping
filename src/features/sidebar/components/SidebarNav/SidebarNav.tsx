@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 import styles from './SidebarNav.module.scss';
 import { SidebarNavItem } from './SidebarNavItem/SidebarNavItem';
@@ -11,23 +10,22 @@ type options = {
   id: string;
 };
 
-type SidebarNavItems = { options: options[] };
+type SidebarNavItems = { options: options[]; miniSb?: boolean };
 
-export const SidebarNav = ({ options }: SidebarNavItems) => {
+export const SidebarNav = ({ options, miniSb }: SidebarNavItems) => {
   return (
     <nav>
       <ul className={styles.ul}>
         {options.map((item) => {
           return (
-            // <Link to={item.id} key={item.id}>
             <SidebarNavItem
               key={item.id}
               label={item.label}
               id={item.id}
               startIcon={item.startIcon}
               endIcon={item.endIcon}
+              miniSb={miniSb}
             />
-            // </Link>
           );
         })}
       </ul>

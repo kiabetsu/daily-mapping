@@ -1,0 +1,47 @@
+.inputBlock {
+  position: relative;
+
+  .input {
+    box-sizing: border-box;
+
+    padding: 16px 18px 16px 42px;
+    width: 100%;
+    line-height: 20px;
+    background: #fff;
+    border-radius: 8px;
+    border: none;
+    font-size: 16px;
+    // transition: all 0.5s linear;
+    outline: none;
+
+    &:focus {
+      outline: #0969da auto 1px;
+
+      ~ .endIcon {
+        display: none;
+      }
+    }
+
+    &:valid {
+      ~ .endIcon {
+        display: none;
+      }
+    }
+
+    ::placeholder {
+      color: #6d6d6d;
+    }
+  }
+
+  .startIcon {
+    position: absolute;
+    left: 20px;
+    top: 15px;
+  }
+
+  .endIcon {
+    position: absolute;
+    right: 20px;
+    top: 15px;
+  }
+}
