@@ -1,5 +1,30 @@
-.navArrow {
-  border-radius: 50%;
-  width: 32px;
-  height: 32px;
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+}
+
+.item {
+  display: inline-flex;
+  align-items: center;
+}
+
+.link {
+  color: #a0a0a0;
+  text-decoration: none;
+  transition: color 0.2s linear;
+
+  &:hover {
+    color: color-mix(in srgb, #a0a0a0 80%, black 20%);
+    text-decoration: underline;
+  }
+}
+
+.current {
+  font-weight: 600;
+  color: #000;
+}
+
+.separator {
+  margin: 0 2px;
+  // color: #a0a0a0;
 }
