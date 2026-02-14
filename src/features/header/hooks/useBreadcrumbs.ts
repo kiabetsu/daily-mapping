@@ -2,29 +2,12 @@ import React from 'react';
 import { useLocation, Link, useParams } from 'react-router-dom';
 
 import { workspaceProjects } from '../../sidebar/store/data';
+import { IWorkspace, taskByIdType } from './types';
 
 export const useCreateCrumbs = () => {
   const location = useLocation();
   const rout = location.pathname.split('/').filter(Boolean);
   const params = useParams();
-
-  interface ITask {
-    id: number;
-    title: string;
-    isActive: boolean;
-  }
-
-  interface IWorkspace {
-    id: number;
-    title: string;
-    isActive: boolean;
-    tasks: ITask[];
-  }
-
-  type taskByIdType = {
-    workspace: IWorkspace;
-    task: ITask;
-  };
 
   // Словарь для быстрого поиска по id
   const workspaceById = React.useMemo(() => {
@@ -48,8 +31,15 @@ export const useCreateCrumbs = () => {
   const breadcrumbs = React.useMemo(() => {
     const result = [];
     const options = ['dashboard', 'categories', 'settings'];
-
     const isOption = location.pathname.split('/').some((item) => options.includes(item));
+
+    if (rout.length === 0) {
+      result.push({
+        type: 'option',
+        label: 'Dashboard',
+        link: '/dashboard',
+      });
+    }
 
     if (isOption) {
       const option = location.pathname.split('/').filter(Boolean)[0];
@@ -84,7 +74,6 @@ export const useCreateCrumbs = () => {
       }
     }
 
-    console.log(result);
     return result;
   }, [params.workspaceId, params.taskId, location]);
 

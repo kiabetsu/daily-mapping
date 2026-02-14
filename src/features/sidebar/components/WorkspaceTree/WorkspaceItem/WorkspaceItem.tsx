@@ -1,5 +1,3 @@
-import { Link } from 'react-router-dom';
-
 import styles from './WorkspaceItem.module.scss';
 
 import { WorkspaceButton } from './WorkspaceButton/WorkspaceButton';

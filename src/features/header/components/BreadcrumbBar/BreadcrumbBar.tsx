@@ -1,9 +1,7 @@
 import React from 'react';
-import { ArrowLeft, ArrowRight } from 'lucide-react';
 
 import styles from './BreadcrumbBar.module.scss';
-import { Button } from '../../../components/Button/Button';
-import { useCreateCrumbs } from '../hooks/useBreadcrumbs';
+import { useCreateCrumbs } from '../../hooks/useBreadcrumbs';
 
 export const BreadcrumbBar = () => {
   const { rout, Link, breadcrumbs } = useCreateCrumbs();
@@ -11,10 +9,9 @@ export const BreadcrumbBar = () => {
   return (
     <nav className={styles.breadcrumbs}>
       {breadcrumbs.map((item, index) => {
-        const isLast = index === rout.filter((item) => isNaN(Number(item))).length - 1;
+        const isLast =
+          index === rout.filter((item) => isNaN(Number(item))).length - 1 || rout.length === 0;
         const isFirst = index === 0;
-        console.log('item', item, 'isLast', isLast);
-        console.log('rout', rout, 'rout.length', rout.length, 'index', index);
 
         if (item !== undefined) {
           return (
