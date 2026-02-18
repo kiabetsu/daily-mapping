@@ -6,7 +6,7 @@ import { Button } from '../../../../components/Button/Button';
 import { useNavigationButton } from '../../hooks/useNavigationButton';
 
 export const NavigationButtons = () => {
-  const navnav = useNavigationButton();
+  const { handleGoBack, handleGoForward, canGoBack, canGoForward } = useNavigationButton();
 
   return (
     <div className={styles.navArrows}>
@@ -15,12 +15,16 @@ export const NavigationButtons = () => {
         startIcon={<ArrowLeft size={20} />}
         variant="text"
         className={`${styles.navArrow}`}
+        onClick={handleGoBack}
+        disabled={!canGoBack}
       />
       <Button
         iconButton={true}
         startIcon={<ArrowRight size={20} />}
         variant="text"
         className={`${styles.navArrow}`}
+        onClick={handleGoForward}
+        disabled={!canGoForward}
       />
     </div>
   );

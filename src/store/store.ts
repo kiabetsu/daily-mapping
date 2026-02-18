@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 
-import { IStore } from './type';
+import { IStore } from './types';
 
 const useMainStore = create<IStore>((set) => ({
   rout: [],

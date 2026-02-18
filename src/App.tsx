@@ -1,9 +1,6 @@
 import React from 'react';
-import * as ReactDOM from 'react-dom/client';
-import { createBrowserRouter, Link, RouterProvider, Outlet } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
-// import logo from './logo.svg';
-import styles from './App.module.scss';
 import { HomePage } from './pages/HomePage';
 
 const router = createBrowserRouter([
