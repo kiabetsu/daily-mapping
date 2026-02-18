@@ -1,5 +1,3 @@
-import { Link } from 'react-router-dom';
-
 import styles from './WorkspaceItem.module.scss';
 
 import { WorkspaceButton } from './WorkspaceButton/WorkspaceButton';
@@ -23,7 +21,7 @@ export const WorkspaceItem = ({ id, label, tasks }: WorkspaceItemProps) => {
       <ul className={`${styles.taskList} ${isExpanded ? styles.expandedTaskList : ''}`}>
         {tasks.map((task, index) => (
           <li className={styles.task} key={task.id}>
-            <Task taskId={task.id} index={index} title={task.title} />
+            <Task taskId={task.id} index={index} title={task.title} workspaceId={id} />
           </li>
         ))}
       </ul>

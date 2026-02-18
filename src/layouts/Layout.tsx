@@ -4,6 +4,7 @@ import { Outlet } from 'react-router-dom';
 import styles from './Layout.module.scss';
 import { Sidebar } from '../features/sidebar/components/Sidebar';
 import { useLayoutEffect } from '../hooks/sidebar/useSidebar';
+import { Header } from '../features/header/components/Header';
 
 type layoutProps = {
   children: ReactNode;
@@ -16,7 +17,10 @@ export const Layout = ({ children }: layoutProps) => {
     <div className={styles.layout}>
       <Sidebar width={sidebarWidth} />
       <div className={styles.separator} onMouseDown={startDrag} />
-      <Outlet />
+      <div className={styles.content}>
+        <Header />
+        <Outlet />
+      </div>
     </div>
   );
 };

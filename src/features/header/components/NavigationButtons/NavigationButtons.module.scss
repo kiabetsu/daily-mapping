@@ -1,0 +1,16 @@
+.navArrows {
+  display: flex;
+
+  .navArrow {
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+  }
+
+  .navArrow:enabled {
+  }
+  .navArrow:disabled {
+    color: #a0a0a0;
+    cursor: default;
+  }
+}
