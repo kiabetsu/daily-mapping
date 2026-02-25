@@ -20,7 +20,7 @@ interface ITaskSidebar {
 export const Task = ({ index, taskId, title, workspaceId }: ITaskSidebar) => {
   const { handleClick, activePageId } = useClick();
   return (
-    <Link to={`workspace/${workspaceId}/task/${taskId}`}>
+    <Link to={`task/${taskId}`}>
       <div className={styles.task}>
         {index === 0 ? (
           <Branch2 className={styles.branch2} />
