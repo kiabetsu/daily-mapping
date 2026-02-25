@@ -1,9 +1,9 @@
 import React, { useCallback } from 'react';
 
 export const useLayoutEffect = () => {
-  const [sidebarWidth, setSidebarWidth] = React.useState(320);
+  const [sidebarWidth, setSidebarWidth] = React.useState(390);
   const [isDrag, setIsDrag] = React.useState(false);
-  const [dragStartWidth, setDragStartWidth] = React.useState(320);
+  const [dragStartWidth, setDragStartWidth] = React.useState(390);
   const [startX, setStartX] = React.useState(0);
 
   const handleMouseMove = useCallback(
@@ -12,7 +12,7 @@ export const useLayoutEffect = () => {
       console.log(sidebarWidth, e.pageX, dragStartWidth);
 
       const minWidth = 110;
-      const maxWidth = 400;
+      const maxWidth = 450;
 
       const deltaX = e.pageX - startX;
       const newWidth = dragStartWidth + deltaX;
