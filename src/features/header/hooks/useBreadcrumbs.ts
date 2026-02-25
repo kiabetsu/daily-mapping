@@ -9,7 +9,6 @@ export const useCreateCrumbs = () => {
   const rout = location.pathname.split('/').filter(Boolean);
   const params = useParams();
 
-  // Словарь для быстрого поиска по id
   const workspaceById = React.useMemo(() => {
     const map: Record<number, IWorkspace> = {};
     workspaceProjects.forEach((ws) => {
@@ -56,6 +55,7 @@ export const useCreateCrumbs = () => {
       if (workspace) {
         result.push({
           type: 'workspace',
+          subLabel: workspace.subTitle,
           label: workspace.title,
           link: `/workspace/${workspace.id}`,
         });
@@ -67,9 +67,15 @@ export const useCreateCrumbs = () => {
       const taskData = taskById[Number(taskId)];
       if (taskData) {
         result.push({
+          type: 'workspace',
+          label: taskData.workspace.title,
+          link: `/workspace/${taskData.workspace.id}`,
+        });
+        result.push({
           type: 'task',
+          subLabel: taskData.task.subTitle,
           label: taskData.task.title,
-          link: `/workspace/${taskData.workspace.id}/task/${taskData.task.id}`,
+          link: `/task/${taskData.task.id}`,
         });
       }
     }

@@ -1,0 +1,13 @@
+.labels {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  .subLabel {
+    font-size: 20px;
+  }
+
+  .mainLabel {
+    font-size: 44px;
+    font-weight: 600;
+  }
+}

@@ -1,17 +1,14 @@
 import React from 'react';
 
 import styles from './Header.module.scss';
-import { BreadcrumbBar } from './BreadcrumbBar/BreadcrumbBar';
-import { NavigationButtons } from './NavigationButtons/NavigationButtons';
+import { Navigation } from './Navigation/Navigation';
+import { MainHeader } from './MainHeader/MainHeader';
 
 export const Header = () => {
   return (
     <div className={styles.header}>
-      <div className={styles.navArrows}>
-        <NavigationButtons />
-      </div>
-
-      <BreadcrumbBar />
+      <Navigation />
+      <MainHeader />
     </div>
   );
 };

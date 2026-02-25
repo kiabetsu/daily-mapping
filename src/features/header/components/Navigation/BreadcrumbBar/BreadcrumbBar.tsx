@@ -1,16 +1,15 @@
 import React from 'react';
 
 import styles from './BreadcrumbBar.module.scss';
-import { useCreateCrumbs } from '../../hooks/useBreadcrumbs';
+import { useCreateCrumbs } from '../../../hooks/useBreadcrumbs';
 
 export const BreadcrumbBar = () => {
-  const { rout, Link, breadcrumbs } = useCreateCrumbs();
+  const { Link, breadcrumbs } = useCreateCrumbs();
 
   return (
     <nav className={styles.breadcrumbs}>
       {breadcrumbs.map((item, index) => {
-        const isLast =
-          index === rout.filter((item) => isNaN(Number(item))).length - 1 || rout.length === 0;
+        const isLast = index === breadcrumbs.length - 1;
         const isFirst = index === 0;
 
         if (item !== undefined) {
