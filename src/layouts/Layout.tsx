@@ -5,6 +5,7 @@ import styles from './Layout.module.scss';
 import { Sidebar } from '../features/sidebar/components/Sidebar';
 import { useLayoutEffect } from '../hooks/sidebar/useSidebar';
 import { Header } from '../features/header/components/Header';
+import { Dashboard } from '../features/dashboard/components/Dashboard';
 
 type layoutProps = {
   children: ReactNode;
@@ -19,6 +20,7 @@ export const Layout = ({ children }: layoutProps) => {
       <div className={styles.separator} onMouseDown={startDrag} />
       <div className={styles.content}>
         <Header />
+        <Dashboard />
         <Outlet />
       </div>
     </div>

@@ -20,7 +20,7 @@ export const useLayoutEffect = () => {
       const culcWidth = newWidth < 200 ? 110 : Math.max(minWidth, Math.min(newWidth, maxWidth));
       setSidebarWidth(culcWidth);
     },
-    [startX, dragStartWidth],
+    [startX, dragStartWidth, sidebarWidth],
   );
 
   const startDrag = React.useCallback(
