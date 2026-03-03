@@ -81,7 +81,7 @@ export const useCreateCrumbs = () => {
     }
 
     return result;
-  }, [params.workspaceId, params.taskId, location]);
+  }, [location.pathname, rout.length, params.workspaceId, params.taskId, workspaceById, taskById]);
 
   return { rout, Link, breadcrumbs };
 };

@@ -12,7 +12,7 @@ export const useNavigationButton = () => {
   useEffect(() => {
     setCanGoBack(index > 0);
     setCanGoForward(index < historyLength - 1);
-  }, [location.pathname]);
+  }, [historyLength, index, location.pathname]);
 
   const handleGoBack = () => {
     navigate(-1);
