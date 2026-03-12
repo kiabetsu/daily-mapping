@@ -8,18 +8,27 @@ services:
     ports:
       - '5432:5432'
     volumes:
-      - /var/lib/postgresql/data
-
+      - postgres_:/var/lib/postgresql/data
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U user -d planning_db']
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
   backend:
     build: ./backend
     ports:
-      - '8000:8000'
+      - '3001:3000'
     volumes:
       - ./backend:/app
-    depends_on:
-      - postgres
+      - /app/node_modules
     environment:
-      DATABASE_URL: postgresql://user:pass@postgres:5432/planning_db
+      - NODE_ENV=development
+      - DATABASE_URL=postgresql://user:pass@postgres:5432/planning_db
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
 
   frontend:
     build: ./frontend
@@ -31,4 +40,5 @@ services:
     depends_on:
       - backend
 
-# volumes: postgres_
+volumes: 
+  postgres_:
