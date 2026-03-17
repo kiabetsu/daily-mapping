@@ -7,7 +7,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node src/app.ts",
-    "dev": "nodemon --exec ts-node src/app.ts"
+    "dev": "nodemon --exec ts-node src/app.ts",
+    "db:create": "tsx scripts/createDB.ts && tsx scripts/createTables.ts",
+    "db:seed": "tsx scripts/seedDB.ts",
+    "db:reset": "npm run db:create && npm run db:seed"
   },
   "keywords": [],
   "author": "",
@@ -31,6 +34,7 @@
     "@types/node": "^25.5.0",
     "@types/pg": "^8.18.0",
     "ts-node": "^10.9.2",
-    "typescript": "^5.9.3"
+    "typescript": "^5.9.3",
+    "tsx": "^4.19.1"
   }
 }
