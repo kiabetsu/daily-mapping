@@ -1,7 +1,7 @@
-import React from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
-import { HomePage } from './pages/HomePage';
+import { HomePage } from './pages/Home/HomePage';
+import { AuthPage } from './pages/Auth/AuthPage';
 
 //TODO: add workspace page. Add page and logic of addition
 //TODO: add logic of workspace addition
@@ -23,6 +23,10 @@ const router = createBrowserRouter([
       { path: 'workspace/:workspaceId', element: <div>workspace</div> },
       { path: 'task/:taskId', element: <div>task page</div> },
     ],
+  },
+  {
+    path: '/auth',
+    element: <AuthPage />,
   },
 ]);
 

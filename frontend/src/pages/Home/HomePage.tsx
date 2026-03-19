@@ -1,16 +1,16 @@
 import React, { ReactNode } from 'react';
 import { Outlet } from 'react-router-dom';
 
-import styles from './Layout.module.scss';
-import { Sidebar } from '../features/sidebar/components/Sidebar';
-import { useLayoutEffect } from '../hooks/sidebar/useSidebar';
-import { Header } from '../features/header/components/Header';
+import styles from './HomePage.module.scss';
+import { Sidebar } from '../../features/sidebar/components/Sidebar';
+import { useLayoutEffect } from '../../hooks/sidebar/useSidebar';
+import { Header } from '../../features/header/components/Header';
 
 type layoutProps = {
   children: ReactNode;
 };
 
-export const Layout = ({ children }: layoutProps) => {
+export const HomePage = () => {
   const { sidebarWidth, startDrag } = useLayoutEffect();
 
   return (

@@ -3,6 +3,8 @@ export interface IStore {
   history: string[];
   currentHistoryId: number;
 
+  isAuth: boolean;
+
   setBreadcrumb: (breadcrumb: (string | number)[]) => void;
 }
 
