@@ -1,11 +1,11 @@
 import React from 'react';
 
-import { Input } from '../../../../components/Input/Input';
-import { Button } from '../../../../components/Button/Button';
+import { Input } from '../../../../../components/Input/Input';
+import { Button } from '../../../../../components/Button/Button';
 import styles from './Search.module.scss';
 
-import { ReactComponent as HotKeysForSearch } from '../../../../assets/Group 7.svg';
-import { ReactComponent as Lupa } from '../../../../assets/MagnifyingGlass.svg';
+import { ReactComponent as HotKeysForSearch } from '../../assets/Group 7.svg';
+import { ReactComponent as Lupa } from '../../assets/MagnifyingGlass.svg';
 
 type SearchType = { miniSb?: boolean };
 

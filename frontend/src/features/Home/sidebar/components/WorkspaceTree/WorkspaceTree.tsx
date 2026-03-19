@@ -1,5 +1,3 @@
-import React from 'react';
-
 import styles from './WorkspaceTree.module.scss';
 import { WorkspaceItem } from './WorkspaceItem/WorkspaceItem';
 

@@ -1,17 +1,12 @@
-import React, { ReactNode } from 'react';
 import { Outlet } from 'react-router-dom';
 
 import styles from './HomePage.module.scss';
-import { Sidebar } from '../../features/sidebar/components/Sidebar';
-import { useLayoutEffect } from '../../hooks/sidebar/useSidebar';
-import { Header } from '../../features/header/components/Header';
-
-type layoutProps = {
-  children: ReactNode;
-};
+import { Sidebar } from '../../features/Home/sidebar/components/Sidebar';
+import { useSidebarLayout } from '../../hooks/sidebar/useSidebar';
+import { Header } from '../../features/Home/header/components/Header';
 
 export const HomePage = () => {
-  const { sidebarWidth, startDrag } = useLayoutEffect();
+  const { sidebarWidth, startDrag } = useSidebarLayout();
 
   return (
     <div className={styles.layout}>

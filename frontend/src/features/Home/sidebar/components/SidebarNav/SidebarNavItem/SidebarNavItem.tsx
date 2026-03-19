@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-import { Button } from '../../../../../components/Button/Button';
+import { Button } from '../../../../../../components/Button/Button';
 import styles from './SidebarNavItem.module.scss';
 import { useClick } from '../../../hooks/useSidebar';
 

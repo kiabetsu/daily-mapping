@@ -2,7 +2,7 @@ import React from 'react';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 
 import styles from './NavigationButtons.module.scss';
-import { Button } from '../../../../../components/Button/Button';
+import { Button } from '../../../../../../components/Button/Button';
 import { useNavigationButton } from '../../../hooks/useNavigationButton';
 
 export const NavigationButtons = () => {

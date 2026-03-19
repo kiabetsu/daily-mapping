@@ -4,7 +4,7 @@ import useMainStore from '../../store/store';
 import styles from './AuthPage.module.scss';
 
 export const AuthPage = () => {
-  const { isAuth } = useMainStore();
+  // const { isLogin } = useMainStore();
 
   // const [isLogin, setIsLogin] = React.useState(true);
 
@@ -51,36 +51,15 @@ export const AuthPage = () => {
   // };
 
   return (
-    <div
-      className={styles.wrapper}
-      style={{
-        opacity: `${isAuth ? '0' : '1'}`,
-        pointerEvents: `${isAuth ? 'none' : 'initial'}`,
-      }}>
+    <div className={styles.wrapper}>
       <div className={styles.centered}>
-        <div className={styles.contentBox} style={{ height: `${isAuth ? '500px' : '650px'}` }}>
-          <div
+        {/*<div className={styles.contentBox}>
+            <div
             className={styles.carousel}
-            style={{ transform: `${isAuth ? 'translateX(0)' : 'translateX(-728px)'}` }}>
+            style={{ transform: `${isLogin ? 'translateX(0)' : 'translateX(-728px)'}` }}>
             <div className={styles.inputBox}>
               <h1>Sign in</h1>
-              {/* <AuthField
-                ref={usernameRef}
-                name={'Username'}
-                onChange={setUsername}
-                nextTarget={passwordRef}
-                warningCondition={!username}
-                warningText={'Enter your username'}
-              />
-              <AuthField
-                ref={passwordRef}
-                name={'Password'}
-                onChange={setPassword}
-                nextTarget={loginButtonRef}
-                pressButton={true}
-                warningCondition={!password}
-                warningText={'Enter your password'}
-              /> */}
+
               <div className={styles.loginButtonAndAgree}>
                 <label className={styles.rememberCheckbox}>
                   <input type="checkbox" name="rememberMe" id="" />
@@ -100,7 +79,7 @@ export const AuthPage = () => {
                 >
                   {' '}
                   Log in
-                  {/* {status === 'padding' && <div className={styles.spinner}></div>} */}
+                   {status === 'padding' && <div className={styles.spinner}></div>} 
                 </button>
                 <span>
                   By creating an account, you agree to the &nbsp;
@@ -129,39 +108,7 @@ export const AuthPage = () => {
 
             <div className={styles.inputBox}>
               <h1>Sign up</h1>
-              {/* <AuthField
-                ref={regUsernameRef}
-                name={'Username'}
-                description={'Username may only contain alphanumeric characters or single hyphens.'}
-                onChange={setReg_username}
-                warningCondition={reg_username.length < 8}
-                nextTarget={regEmailRef}
-              />
-              <AuthField
-                ref={regEmailRef}
-                name={'Email'}
-                onChange={setReg_email}
-                warningCondition={!reg_email.includes('@')}
-                warningText={'Incorrect email'}
-                nextTarget={regPasswordRef}
-              />
-              <AuthField
-                ref={regPasswordRef}
-                name={'Password'}
-                description={'Password should be at least 8 characters.'}
-                onChange={setReg_password}
-                warningCondition={reg_password.length < 8}
-                nextTarget={regPasswordConfirmRef}
-              />
-              <AuthField
-                ref={regPasswordConfirmRef}
-                name={'Repeat password'}
-                onChange={setReg_passwordConfirm}
-                warningCondition={reg_passwordConfirm !== reg_password}
-                warningText={'Password failed'}
-                nextTarget={regButtonRef}
-                pressButton={true}
-              /> */}
+
               <div className={styles.loginButtonAndAgree}>
                 <button
                 // ref={regButtonRef}
@@ -193,7 +140,7 @@ export const AuthPage = () => {
                 // }}
                 >
                   Sign up
-                  {/* {status === 'padding' && <div className={styles.spinner}></div>} */}
+                   {status === 'padding' && <div className={styles.spinner}></div>} 
                 </button>
                 <span>
                   By creating an account, you agree to the &nbsp;
@@ -210,18 +157,18 @@ export const AuthPage = () => {
                 </span>
               </div>
             </div>
-          </div>
-        </div>
+          </div>*/}
+        {/* </div>
         <div className={styles.dividingLine}>
           <div className={styles.textOverDividingLine}>
-            {isAuth ? 'New to our community' : 'Already have account?'}
+            {isLogin ? 'New to our community' : 'Already have account?'}
           </div>
         </div>
         <button
         // className={styles.signupButton} onClick={() => setIsLogin(!isLogin)}
         >
-          {isAuth ? 'Create an account' : 'Log in'}
-        </button>
+          {isLogin ? 'Create an account' : 'Log in'}
+        </button> */}
       </div>
     </div>
   );

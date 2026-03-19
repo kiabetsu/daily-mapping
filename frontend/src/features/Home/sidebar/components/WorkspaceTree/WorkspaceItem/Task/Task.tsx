@@ -1,13 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import { ReactComponent as Checkbox } from '../../../../../../assets/CaretDown.svg';
-import { ReactComponent as Branch1 } from '../../../../../../assets/Vector 2.svg';
-import { ReactComponent as Branch2 } from '../../../../../../assets/Vector 5.svg';
-import { ReactComponent as Branch3 } from '../../../../../../assets/Vector 5 (1).svg';
+import { ReactComponent as Checkbox } from '../../../../assets/CaretDown.svg';
+import { ReactComponent as Branch1 } from '../../../../assets/Vector 2.svg';
+import { ReactComponent as Branch2 } from '../../../../assets/Vector 5.svg';
+import { ReactComponent as Branch3 } from '../../../../assets/Vector 5 (1).svg';
 import { useClick } from '../../../../hooks/useSidebar';
 
-import { Button } from '../../../../../../components/Button/Button';
+import { Button } from '../../../../../../../components/Button/Button';
 import styles from './Task.module.scss';
 
 interface ITaskSidebar {

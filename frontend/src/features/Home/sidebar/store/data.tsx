@@ -1,6 +1,6 @@
-import { ReactComponent as Dashboard } from '../../../assets/Atom.svg';
-import { ReactComponent as Categories } from '../../../assets/Vector (2).svg';
-import { ReactComponent as Settings } from '../../../assets/GearSix.svg';
+import { ReactComponent as Dashboard } from '../assets/Atom.svg';
+import { ReactComponent as Categories } from '../assets/Vector (2).svg';
+import { ReactComponent as Settings } from '../assets/GearSix.svg';
 
 const endIcon = (
   <div

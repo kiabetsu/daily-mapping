@@ -1,7 +1,7 @@
 import React from 'react';
 
 import styles from './Sidebar.module.scss';
-import avatar from '../../../assets/Frame 5.png';
+import avatar from '../assets/Frame 5.png';
 import { UserProfile } from './UserProfile/UserProfile';
 import { SidebarNav } from './SidebarNav/SidebarNav';
 import { WorkspaceTree } from './WorkspaceTree/WorkspaceTree';

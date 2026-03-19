@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import { ReactComponent as Arrow } from '../../../../../../assets/CaretDown (1).svg';
+import { ReactComponent as Arrow } from '../../../../assets/CaretDown (1).svg';
 
-import { Button } from '../../../../../../components/Button/Button';
+import { Button } from '../../../../../../../components/Button/Button';
 import styles from './WorkspaceButton.module.scss';
 import { useClick } from '../../../../hooks/useSidebar';
 

@@ -1,6 +1,6 @@
 import React, { useCallback } from 'react';
 
-export const useLayoutEffect = () => {
+export const useSidebarLayout = () => {
   const [sidebarWidth, setSidebarWidth] = React.useState(390);
   const [isDrag, setIsDrag] = React.useState(false);
   const [dragStartWidth, setDragStartWidth] = React.useState(390);
