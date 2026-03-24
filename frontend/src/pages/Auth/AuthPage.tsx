@@ -2,6 +2,7 @@ import React from 'react';
 
 import useMainStore from '../../store/store';
 import styles from './AuthPage.module.scss';
+import { AuthForm } from '../../features/Auth/AuthForm/components/AuthForm';
 
 export const AuthPage = () => {
   // const { isLogin } = useMainStore();
@@ -53,6 +54,7 @@ export const AuthPage = () => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.centered}>
+        <AuthForm />
         {/*<div className={styles.contentBox}>
             <div
             className={styles.carousel}
